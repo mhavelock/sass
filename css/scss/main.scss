@@ -1,0 +1,43 @@
+// Use Compass
+@import "compass";
+
+// Reset using Normalize
+@import "reset";
+
+// Import Open Sans font from Google
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+// Set variables and reusable mixins
+@import "config";
+@import "mixins";
+@import "helpers";
+
+// Import typical layout sass modules
+@import "grid";
+@import "type";
+@import "media";
+@import "links";
+@import "tables";
+@import "forms";
+@import "notifications";
+@import "buttons";
+@import "other";
+
+// Use Font Awesome for icons
+@import "icons";
+
+// Specific project styles, add any section specific sass modules here
+@import "layout";
+@import "home";
+
+
+// Additional styles to think about
+@import "responsive";
+@import "retina";
+@import "print";
+
+// If IE support is needed
+@import "ie";
+
+// For anything quick and dirty that needs thrown in
+@import "shame";

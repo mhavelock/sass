@@ -1,0 +1,69 @@
+// === Example of @extend ===
+.square {
+   width: 200px;
+   height: 200px;
+   background-color: lightcoral;
+}
+.circle {
+   @extend .square;
+   border-radius: 50%;
+}
+.ellipse {
+   @extend .circle;
+   height: 120px;
+}
+
+%text-truncate {
+	text-overflow: ellipsis;
+	vertical-align: top;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+}
+
+%clearfix {
+	zoom:1;
+	&:before, &:after {
+		content: "\0020"; 
+		display: block; 
+		height: 0; 
+		overflow: hidden; 
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+%visuallyhidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        left: -500%;
+        
+        &.focusable {
+                &:active, &:focus { /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+                        clip: auto;
+                        height: auto;
+                        margin: 0;
+                        overflow: visible;
+                        position: static;
+                        width: auto;
+                }
+        }
+}
+
+
+// === Image replacement ===
+%ir {
+        display: block;
+        text-indent: -99in;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        text-align: left;
+        direction: ltr;
+}
